@@ -26,7 +26,10 @@
 
 #include <QHash>
 #include <QImage>
-#include <QPropertyAnimation>
+
+#include <QVariantAnimation>
+
+class QVariantAnimation;
 
 namespace Breeze
 {
@@ -34,9 +37,6 @@ namespace Breeze
     class Button : public KDecoration2::DecorationButton
     {
         Q_OBJECT
-
-        //* declare active state opacity
-        Q_PROPERTY( qreal opacity READ opacity WRITE setOpacity )
 
         public:
 
@@ -112,24 +112,40 @@ namespace Breeze
         explicit Button(KDecoration2::DecorationButtonType type, Decoration *decoration, QObject *parent = nullptr);
 
         //* draw button icon
-        void drawIcon( QPainter *) const;
-        void drawIconBreezeStyle( QPainter *) const;
-        void drawIconAdwaitaStyle( QPainter *) const;
-        void drawIconDarkAuroraeStyle( QPainter *) const;
-        void drawIconSymbolStyle( QPainter *) const;
+        void drawIconPlasma( QPainter *) const;
+        void drawIconGnome( QPainter *) const;
+        void drawIconMacSierra( QPainter *) const;
+        void drawIconMacDarkAurorae( QPainter *) const;
+        void drawIconSBEsierra( QPainter *) const;
+        void drawIconSBEdarkAurorae( QPainter *) const;
+        void drawIconSierraColorSymbols( QPainter *) const;
+        void drawIconDarkAuroraeColorSymbols( QPainter *) const;
+        void drawIconSierraMonochromeSymbols( QPainter *) const;
+        void drawIconDarkAuroraeMonochromeSymbols( QPainter *) const;
 
         //*@name colors
         //@{
+        QColor fontColor() const;
         QColor foregroundColor() const;
         QColor backgroundColor() const;
         QColor mixColors(const QColor&, const QColor&, qreal) const;
-        QColor autoColor( const bool, const bool, const bool, const bool, const QColor, const QColor ) const;
+        QColor autoColor( const bool, const bool, const bool, const QColor, const QColor ) const;
+        //@}
+
+        //*@hover buttons
+        //@{
+        bool hovered() const;
+        //@}
+
+        //*@button radius
+        //@{
+        qreal buttonRadius() const;
         //@}
 
         Flag m_flag = FlagNone;
 
         //* active state change animation
-        QPropertyAnimation *m_animation;
+        QVariantAnimation *m_animation;
 
         //* vertical offset (for rendering)
         QPointF m_offset;

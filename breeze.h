@@ -38,7 +38,7 @@ namespace Breeze
     {
 
         //* corner radius (pixels)
-        Frame_FrameRadius = 3,
+        Frame_FrameRadius = 0,
 
         //* titlebar metrics, in units of small spacing
         // defaulting now to small spacing
@@ -51,6 +51,17 @@ namespace Breeze
         Shadow_Overlap = 3,
 
     };
+
+    //* standard pen widths
+    namespace PenWidth
+    {
+        /* Using 1 instead of slightly more than 1 causes symbols drawn with
+        * pen strokes to look skewed. The exact amount added does not matter
+        * as long as it isn't too visible.
+        */
+        // The standard pen stroke width for symbols.
+        static constexpr qreal Symbol = 1.01;
+    }
 
     //* exception
     enum ExceptionMask

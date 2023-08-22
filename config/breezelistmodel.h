@@ -72,7 +72,7 @@ namespace Breeze
         //! flags
         Qt::ItemFlags flags(const QModelIndex &index) const override
         {
-            if (!index.isValid()) return nullptr;
+            if (!index.isValid()) return Qt::NoItemFlags;
             return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
         }
 
@@ -282,7 +282,7 @@ namespace Breeze
        }
 
         //! return all values
-        const List& get() const
+        const List& get( void ) const
         { return _values; }
 
         //! return value for given index

@@ -41,31 +41,33 @@ namespace Breeze
 
         m_ui.setupUi( this );
 
-        connect( m_ui.buttonBox->button( QDialogButtonBox::Cancel ), SIGNAL(clicked()), this, SLOT(close()) );
+        connect( m_ui.buttonBox->button( QDialogButtonBox::Cancel ), &QAbstractButton::clicked, this, &QWidget::close );
 
         // store checkboxes from ui into list
         m_checkboxes.insert( BorderSize, m_ui.borderSizeCheckBox );
 
         // detect window properties
-        connect( m_ui.detectDialogButton, SIGNAL(clicked()), SLOT(selectWindowProperties()) );
+        connect( m_ui.detectDialogButton, &QAbstractButton::clicked, this, &ExceptionDialog::selectWindowProperties );
 
         // connections
         connect( m_ui.exceptionType, SIGNAL(currentIndexChanged(int)), SLOT(updateChanged()) );
-        connect( m_ui.exceptionEditor, SIGNAL(textChanged(QString)), SLOT(updateChanged()) );
+        connect( m_ui.exceptionEditor, &QLineEdit::textChanged, this, &ExceptionDialog::updateChanged );
         connect( m_ui.borderSizeComboBox, SIGNAL(currentIndexChanged(int)), SLOT(updateChanged()) );
 
         for( CheckBoxMap::iterator iter = m_checkboxes.begin(); iter != m_checkboxes.end(); ++iter )
-        { connect( iter.value(), SIGNAL(clicked()), SLOT(updateChanged()) ); }
+        { connect( iter.value(), &QAbstractButton::clicked, this, &ExceptionDialog::updateChanged ); }
 
-        connect( m_ui.hideTitleBar, SIGNAL(clicked()), SLOT(updateChanged()) );
-        connect( m_ui.matchColorForTitleBar, SIGNAL(clicked()), SLOT(updateChanged()) );
-        connect( m_ui.drawBackgroundGradient, SIGNAL(clicked()), SLOT(updateChanged()) );
+        connect( m_ui.hideTitleBar, SIGNAL(currentIndexChanged(int)), SLOT(updateChanged()) );
+        connect( m_ui.matchColorForTitleBar, &QAbstractButton::clicked, this, &ExceptionDialog::updateChanged );
+        connect( m_ui.systemForegroundColor, &QAbstractButton::clicked, this, &ExceptionDialog::updateChanged );
+        connect( m_ui.drawTitleBarSeparator, &QAbstractButton::clicked, this, &ExceptionDialog::updateChanged );
+        connect( m_ui.drawBackgroundGradient, &QAbstractButton::clicked, this, &ExceptionDialog::updateChanged );
         m_ui.gradientOverrideLabelSpinBox->setSpecialValueText(tr("None"));
-        connect( m_ui.opacityOverrideLabelSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), [=](int /*i*/){updateChanged();} );
-        connect( m_ui.opaqueTitleBar, SIGNAL(clicked()), SLOT(updateChanged()) );
+        connect( m_ui.gradientOverrideLabelSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), [=](int /*i*/){updateChanged();} );
+        connect( m_ui.opaqueTitleBar, &QAbstractButton::clicked, this, &ExceptionDialog::updateChanged );
         m_ui.opacityOverrideLabelSpinBox->setSpecialValueText(tr("None"));
         connect( m_ui.opacityOverrideLabelSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), [=](int /*i*/){updateChanged();} );
-        connect( m_ui.isDialog, SIGNAL(clicked()), SLOT(updateChanged()) );
+        connect( m_ui.isDialog, &QAbstractButton::clicked, this, &ExceptionDialog::updateChanged );
 
         // hide detection dialog on non X11 platforms
         #if BREEZE_HAVE_X11
@@ -86,8 +88,10 @@ namespace Breeze
         m_ui.exceptionType->setCurrentIndex(m_exception->exceptionType() );
         m_ui.exceptionEditor->setText( m_exception->exceptionPattern() );
         m_ui.borderSizeComboBox->setCurrentIndex( m_exception->borderSize() );
-        m_ui.hideTitleBar->setChecked( m_exception->hideTitleBar() );
+        m_ui.hideTitleBar->setCurrentIndex( m_exception->hideTitleBar() );
         m_ui.matchColorForTitleBar->setChecked( m_exception->matchColorForTitleBar() );
+        m_ui.systemForegroundColor->setChecked( m_exception->systemForegroundColor() );
+        m_ui.drawTitleBarSeparator->setChecked( m_exception->drawTitleBarSeparator() );
         m_ui.drawBackgroundGradient->setChecked( m_exception->drawBackgroundGradient() );
         m_ui.gradientOverrideLabelSpinBox->setValue( m_exception->gradientOverride() );
         m_ui.opaqueTitleBar->setChecked( m_exception->opaqueTitleBar() );
@@ -108,8 +112,10 @@ namespace Breeze
         m_exception->setExceptionType( m_ui.exceptionType->currentIndex() );
         m_exception->setExceptionPattern( m_ui.exceptionEditor->text() );
         m_exception->setBorderSize( m_ui.borderSizeComboBox->currentIndex() );
-        m_exception->setHideTitleBar( m_ui.hideTitleBar->isChecked() );
+        m_exception->setHideTitleBar( m_ui.hideTitleBar->currentIndex() );
         m_exception->setMatchColorForTitleBar( m_ui.matchColorForTitleBar->isChecked() );
+        m_exception->setSystemForegroundColor( m_ui.systemForegroundColor->isChecked() );
+        m_exception->setDrawTitleBarSeparator( m_ui.drawTitleBarSeparator->isChecked() );
         m_exception->setDrawBackgroundGradient( m_ui.drawBackgroundGradient->isChecked() );
         m_exception->setGradientOverride( m_ui.gradientOverrideLabelSpinBox->value() );
         m_exception->setOpaqueTitleBar( m_ui.opaqueTitleBar->isChecked() );
@@ -134,8 +140,10 @@ namespace Breeze
         if( m_exception->exceptionType() != m_ui.exceptionType->currentIndex() ) modified = true;
         else if( m_exception->exceptionPattern() != m_ui.exceptionEditor->text() ) modified = true;
         else if( m_exception->borderSize() != m_ui.borderSizeComboBox->currentIndex() ) modified = true;
-        else if( m_exception->hideTitleBar() != m_ui.hideTitleBar->isChecked() ) modified = true;
+        else if( m_exception->hideTitleBar() != m_ui.hideTitleBar->currentIndex() ) modified = true;
         else if( m_exception->matchColorForTitleBar() != m_ui.matchColorForTitleBar->isChecked() ) modified = true;
+        else if( m_exception->systemForegroundColor() != m_ui.systemForegroundColor->isChecked() ) modified = true;
+        else if( m_exception->drawTitleBarSeparator() != m_ui.drawTitleBarSeparator->isChecked() ) modified = true;
         else if( m_exception->drawBackgroundGradient() != m_ui.drawBackgroundGradient->isChecked() ) modified = true;
         else if( m_exception->gradientOverride() != m_ui.gradientOverrideLabelSpinBox->value() ) modified = true;
         else if( m_exception->opaqueTitleBar() != m_ui.opaqueTitleBar->isChecked() ) modified = true;
@@ -166,7 +174,7 @@ namespace Breeze
         if( !m_detectDialog )
         {
             m_detectDialog = new DetectDialog( this );
-            connect( m_detectDialog, SIGNAL(detectionDone(bool)), SLOT(readWindowProperties(bool)) );
+            connect( m_detectDialog, &DetectDialog::detectionDone, this, &ExceptionDialog::readWindowProperties );
         }
 
         m_detectDialog->detect(0);

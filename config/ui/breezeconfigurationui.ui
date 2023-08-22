@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>843</width>
-    <height>807</height>
+    <height>814</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -33,132 +33,49 @@
        <string>General</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
-       <item row="2" column="8">
-        <widget class="QComboBox" name="buttonStyle">
-         <item>
-          <property name="text">
-           <string>Active vs. Inactive</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Always Active</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Always Inactive</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Plasma Style</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Gnome Style</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Dark Aurorae Style</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Active Dark Aurorae</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Inactive Dark Aurorae</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Symbol Style</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLabel" name="buttonHPaddingLabel">
+       <item row="8" column="1" colspan="4">
+        <widget class="QCheckBox" name="unisonHovering">
          <property name="text">
-          <string>Button horizontal padding:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-         <property name="buddy">
-          <cstring>buttonSpacing</cstring>
+          <string>Unison hovering</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="8">
-        <widget class="QSpinBox" name="buttonHPadding">
+       <item row="13" column="2">
+        <widget class="QSpinBox" name="gradientSpinBox">
          <property name="enabled">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="suffix">
-          <string> px</string>
+          <string> %</string>
          </property>
          <property name="maximum">
-          <number>50</number>
+          <number>100</number>
          </property>
         </widget>
        </item>
-       <item row="26" column="1" colspan="9">
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="1" alignment="Qt::AlignLeft">
-        <widget class="QLabel" name="label_3">
+       <item row="11" column="1" colspan="4">
+        <widget class="QCheckBox" name="drawBorderOnMaximizedWindows">
          <property name="text">
-          <string>Titl&amp;e alignment:</string>
+          <string>Allow resizing maximized windows from window edges</string>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="buttonSpacingLabel">
+         <property name="text">
+          <string>Button spacing:</string>
          </property>
          <property name="buddy">
-          <cstring>titleAlignment</cstring>
+           <cstring>buttonSpacing</cstring>
          </property>
         </widget>
        </item>
-       <item row="2" column="1" alignment="Qt::AlignLeft">
-        <widget class="QLabel" name="label_8">
+       <item row="7" column="1">
+        <widget class="QLabel" name="cornerRadiusLabel">
          <property name="text">
-          <string>Butto&amp;n style:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-         <property name="buddy">
-          <cstring>buttonStyle</cstring>
+          <string>Corner radius:</string>
          </property>
         </widget>
-       </item>
-       <item row="0" column="9">
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
        </item>
        <item row="1" column="1" alignment="Qt::AlignLeft">
         <widget class="QLabel" name="label_4">
@@ -173,7 +90,100 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="8">
+       <item row="25" column="2">
+        <widget class="QSpinBox" name="opacitySpinBox">
+         <property name="suffix">
+          <string> %</string>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Titl&amp;e alignment:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="buddy">
+          <cstring>titleAlignment</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="23" column="1" colspan="3">
+        <widget class="QCheckBox" name="drawTitleBarSeparator">
+         <property name="text">
+          <string>Draw separator between Title Bar and Window</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="1" colspan="4">
+        <widget class="QCheckBox" name="drawBackgroundGradient">
+         <property name="text">
+          <string>Draw window background gradient</string>
+         </property>
+        </widget>
+       </item>
+       <item row="24" column="1" colspan="3">
+        <widget class="QCheckBox" name="opaqueTitleBar">
+         <property name="text">
+          <string>Opaque title bar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QSpinBox" name="buttonSpacing">
+         <property name="suffix">
+          <string> px</string>
+         </property>
+         <property name="prefix">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="1">
+        <widget class="QLabel" name="label_7">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Gradient intensity:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="buttonPaddingLabel">
+         <property name="text">
+          <string>Button padding:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="buddy">
+          <cstring>buttonPadding</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1" alignment="Qt::AlignLeft">
+         <widget class="QLabel" name="hOffsetLabel">
+           <property name="text">
+             <string>Horizontal offset:</string>
+           </property>
+           <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+           <property name="buddy">
+             <cstring>hOffset</cstring>
+           </property>
+         </widget>
+       </item>
+       <item row="1" column="2">
         <widget class="QComboBox" name="buttonSize">
          <item>
           <property name="text">
@@ -202,50 +212,151 @@
          </item>
         </widget>
        </item>
-       <item row="22" column="1" colspan="9">
-        <widget class="QCheckBox" name="drawTitleBarSeparator">
+       <item row="6" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="label_14">
          <property name="text">
-          <string>Draw separator between Title Bar and Window</string>
+          <string>Hide window title bar:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="buddy">
+          <cstring>hideTitleBar</cstring>
          </property>
         </widget>
        </item>
-       <item row="23" column="1" colspan="9">
-        <widget class="QCheckBox" name="opaqueTitleBar">
+       <item row="25" column="1">
+        <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>Opaque title bar</string>
+          <string>Background opacity:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
-       
-         <item row="24" column="1">
-          <widget class="QLabel" name="label_6">
-           <property name="text">
-            <string>Background opacity:</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-           </property>
-          </widget>
+       <item row="0" column="3">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="6" column="2">
+        <widget class="QComboBox" name="hideTitleBar">
+         <item>
+          <property name="text">
+           <string>Never</string>
+          </property>
          </item>
-         <item row="24" column="8">
-          <widget class="QSpinBox" name="opacitySpinBox">
-           <property name="suffix">
-            <string> %</string>
-           </property>
-           <property name="maximum">
-            <number>100</number>
-           </property>
-          </widget>
+         <item>
+          <property name="text">
+           <string>Maximized Windows</string>
+          </property>
          </item>
-         
-       <item row="21" column="1" colspan="9">
-        <widget class="QCheckBox" name="drawSizeGrip">
-         <property name="text">
-          <string>Add handle to resize windows with no border</string>
+         <item>
+          <property name="text">
+           <string>Any Maximization</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Always</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QComboBox" name="buttonStyle">
+         <item>
+          <property name="text">
+           <string>Plasma</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Gnome</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>macOS Sierra</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>macOS Dark Aurorae</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SBE Sierra</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SBE Sierra Active</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SBE Sierra Inactive</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SBE Dark Aurorae</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SBE Dark Aurorae Active</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SBE Dark Aurorae Inactive</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sierra Color Symbols</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Dark Aurorae Color Symbols</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sierra Monochrome Symbols</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Dark Aurorae Monochrome Symbols</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QSpinBox" name="cornerRadiusSpinBox">
+         <property name="suffix">
+          <string> px</string>
+         </property>
+         <property name="prefix">
+          <string/>
          </property>
         </widget>
        </item>
-       <item row="0" column="8">
+       <item row="0" column="2">
         <widget class="QComboBox" name="titleAlignment">
          <item>
           <property name="text">
@@ -269,190 +380,66 @@
          </item>
         </widget>
        </item>
-       <item row="5" column="1" colspan="9">
-        <widget class="QCheckBox" name="matchColorForTitleBar">
+       <item row="22" column="1" colspan="4">
+        <widget class="QCheckBox" name="drawSizeGrip">
          <property name="text">
-          <string>Match Title Bar's and Window's color</string>
+          <string>Add handle to resize windows with no border</string>
          </property>
         </widget>
        </item>
-       <item row="6" column="1" colspan="9">
-        <widget class="QCheckBox" name="outlineCloseButton">
-         <property name="text">
-          <string>Draw a circle around close button (Breeze style only)</string>
+       <item row="4" column="2">
+        <widget class="QSpinBox" name="buttonPadding">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="suffix">
+          <string> px</string>
+         </property>
+         <property name="maximum">
+          <number>50</number>
          </property>
         </widget>
        </item>
-       <item row="7" column="1" colspan="9">
-        <widget class="QCheckBox" name="drawBorderOnMaximizedWindows">
-         <property name="text">
-          <string>Allow resizing maximized windows from window edges</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="1" colspan="9">
-        <widget class="QCheckBox" name="drawBackgroundGradient">
-         <property name="text">
-          <string>Draw window background gradient</string>
-         </property>
-        </widget>
-       </item>
-       
-         <item row="12" column="1">
-          <widget class="QLabel" name="label_7">
+       <item row="5" column="2">
+         <widget class="QSpinBox" name="hOffset">
            <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>Gradient intensity:</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="12" column="8">
-          <widget class="QSpinBox" name="gradientSpinBox">
-           <property name="enabled">
-            <bool>false</bool>
+             <bool>true</bool>
            </property>
            <property name="suffix">
-            <string> %</string>
+             <string> px</string>
            </property>
            <property name="maximum">
-            <number>100</number>
+             <number>50</number>
            </property>
-          </widget>
-         </item>
-         
-
-         <item row="3" column="1">
-          <widget class="QLabel" name="btnSpacingLabel">
-           <property name="text">
-            <string>Button spacing:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="8">
-          <widget class="QSpinBox" name="btnSpacingSpinBox">
-           <property name="suffix">
-            <string> px</string>
-           </property>
-           <property name="prefix">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         
-       <item row="25" column="1" colspan="9">
-        <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,0,0,0,0,0,0">
-         <item row="3" column="0" colspan="7" alignment="Qt::AlignLeft">
-          <widget class="QGroupBox" name="groupBox">
-           <property name="title">
-            <string>Font:</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_3">
-            <item row="1" column="1">
-             <widget class="QSpinBox" name="fontSizeSpinBox">
-              <property name="minimum">
-               <number>5</number>
-              </property>
-              <property name="maximum">
-               <number>50</number>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="3">
-             <widget class="QFontComboBox" name="fontComboBox"/>
-            </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_9">
-              <property name="text">
-               <string>Size:</string>
-              </property>
-              <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QLabel" name="label_10">
-              <property name="text">
-               <string>Weight:</string>
-              </property>
-              <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1">
-             <widget class="QComboBox" name="weightComboBox">
-              <property name="currentIndex">
-               <number>0</number>
-              </property>
-              <item>
-               <property name="text">
-                <string>Normal</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Medium</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>DemiBold</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Bold</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>ExtraBold</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Black</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-            <item row="3" column="1" colspan="3">
-             <widget class="QCheckBox" name="italicCheckBox">
-              <property name="text">
-               <string>Italic</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
+         </widget>
        </item>
-       
-         <item row="8" column="1">
-          <widget class="QLabel" name="cornerRadiusLabel">
+       <item row="2" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Butto&amp;n style:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="buddy">
+          <cstring>buttonStyle</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1" colspan="4">
+        <widget class="QCheckBox" name="matchColorForTitleBar">
+         <property name="text">
+          <string>Match Title Bar to Window color</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1" colspan="4">
+         <widget class="QCheckBox" name="systemForegroundColor">
            <property name="text">
-            <string>Corner radius:</string>
+             <string>Use System Foreground Colors</string>
            </property>
-          </widget>
-         </item>
-         <item row="8" column="8">
-          <widget class="QSpinBox" name="cornerRadiusSpinBox">
-           <property name="suffix">
-            <string> px</string>
-           </property>
-           <property name="prefix">
-            <string/>
-           </property>
-          </widget>
-         </item>
-
+         </widget>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_2">
@@ -796,18 +783,30 @@
   </customwidget>
  </customwidgets>
  <tabstops>
+  <tabstop>tabWidget</tabstop>
   <tabstop>titleAlignment</tabstop>
   <tabstop>buttonSize</tabstop>
   <tabstop>buttonStyle</tabstop>
-  <tabstop>btnSpacingSpinBox</tabstop>
-  <tabstop>outlineCloseButton</tabstop>
-  <tabstop>cornerRadiusSpinBox</tabstop>
+  <tabstop>buttonSpacing</tabstop>
+  <tabstop>buttonPadding</tabstop>
+  <tabstop>hOffset</tabstop>
+  <tabstop>hideTitleBar</tabstop>
+  <tabstop>matchColorForTitleBar</tabstop>
+  <tabstop>systemForegroundColor</tabstop>
+  <tabstop>unisonHovering</tabstop>
   <tabstop>drawBorderOnMaximizedWindows</tabstop>
+  <tabstop>cornerRadiusSpinBox</tabstop>
   <tabstop>drawBackgroundGradient</tabstop>
   <tabstop>drawSizeGrip</tabstop>
   <tabstop>drawTitleBarSeparator</tabstop>
   <tabstop>opaqueTitleBar</tabstop>
   <tabstop>animationsEnabled</tabstop>
+  <tabstop>shadowSize</tabstop>
+  <tabstop>shadowStrength</tabstop>
+  <tabstop>shadowColor</tabstop>
+  <tabstop>shadowSizeInactiveWindows</tabstop>
+  <tabstop>shadowStrengthInactiveWindows</tabstop>
+  <tabstop>shadowColorInactiveWindows</tabstop>
  </tabstops>
  <resources/>
  <connections>
@@ -818,12 +817,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>34</x>
-     <y>194</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
     <hint type="destinationlabel">
-     <x>84</x>
-     <y>221</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>
@@ -834,12 +833,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>108</x>
-     <y>194</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
     <hint type="destinationlabel">
-     <x>141</x>
-     <y>229</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>
@@ -850,12 +849,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>222</x>
-     <y>160</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
     <hint type="destinationlabel">
-     <x>166</x>
-     <y>188</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>
@@ -866,12 +865,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>222</x>
-     <y>160</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
     <hint type="destinationlabel">
-     <x>64</x>
-     <y>57</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>
@@ -882,12 +881,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>222</x>
-     <y>160</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
     <hint type="destinationlabel">
-     <x>166</x>
-     <y>188</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>
@@ -898,12 +897,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>222</x>
-     <y>160</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
     <hint type="destinationlabel">
-     <x>64</x>
-     <y>57</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>
@@ -914,12 +913,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>222</x>
-     <y>160</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
     <hint type="destinationlabel">
-     <x>166</x>
-     <y>188</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>
@@ -930,12 +929,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>222</x>
-     <y>160</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
     <hint type="destinationlabel">
-     <x>64</x>
-     <y>57</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>
@@ -946,12 +945,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>222</x>
-     <y>160</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
     <hint type="destinationlabel">
-     <x>166</x>
-     <y>188</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>
@@ -962,12 +961,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>222</x>
-     <y>160</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
     <hint type="destinationlabel">
-     <x>64</x>
-     <y>57</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>
@@ -978,12 +977,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>222</x>
-     <y>160</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
     <hint type="destinationlabel">
-     <x>166</x>
-     <y>188</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>
@@ -994,12 +993,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>222</x>
-     <y>160</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
     <hint type="destinationlabel">
-     <x>64</x>
-     <y>57</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>
