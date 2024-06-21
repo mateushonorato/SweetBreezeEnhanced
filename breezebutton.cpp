@@ -695,9 +695,9 @@ namespace Breeze
             {
                 QColor button_color;
                 if ( !inactiveWindow && qGray(titleBarColor.rgb()) < 128 )
-                  button_color = QColor(238, 102, 90);
+                  button_color = QColor(218, 70, 63);
                 else if( !inactiveWindow )
-                  button_color = QColor(255, 94, 88);
+                  button_color = QColor(218, 75, 101);
                 else if ( qGray(titleBarColor.rgb()) < 128 )
                   button_color = QColor(100, 100, 100);
                 else
@@ -729,9 +729,9 @@ namespace Breeze
             {
                 QColor button_color;
                 if ( !inactiveWindow && qGray(titleBarColor.rgb()) < 128 )
-                  button_color = QColor(100, 196, 86);
+                  button_color = QColor(202,97,216);
                 else if( !inactiveWindow )
-                  button_color = QColor(40, 200, 64);
+                  button_color = QColor(149, 96, 242);
                 else if ( qGray(titleBarColor.rgb()) < 128 )
                   button_color = QColor(100, 100, 100);
                 else
@@ -786,9 +786,9 @@ namespace Breeze
             {
                 QColor button_color;
                 if ( !inactiveWindow && qGray(titleBarColor.rgb()) < 128 )
-                  button_color = QColor(223, 192, 76);
+                  button_color = QColor(239, 219, 60);
                 else if( !inactiveWindow )
-                  button_color = QColor(255, 188, 48);
+                  button_color = QColor(234, 177, 59);
                 else if ( qGray(titleBarColor.rgb()) < 128 )
                   button_color = QColor(100, 100, 100);
                 else
@@ -1104,9 +1104,9 @@ namespace Breeze
             {
                 QColor button_color;
                 if ( !inactiveWindow && qGray(titleBarColor.rgb()) < 128 )
-                  button_color = QColor(238, 102, 90);
+                  button_color = QColor(218, 70, 63);
                 else if( !inactiveWindow )
-                  button_color = QColor(255, 94, 88);
+                  button_color = QColor(218, 75, 101);
                 else if ( qGray(titleBarColor.rgb()) < 128 )
                   button_color = QColor(100, 100, 100);
                 else
@@ -1138,9 +1138,9 @@ namespace Breeze
             {
                 QColor button_color;
                 if ( !inactiveWindow && qGray(titleBarColor.rgb()) < 128 )
-                  button_color = QColor(100, 196, 86);
+                  button_color = QColor(202,97,216);
                 else if( !inactiveWindow )
-                  button_color = QColor(40, 200, 64);
+                  button_color = QColor(149, 96, 242);
                 else if ( qGray(titleBarColor.rgb()) < 128 )
                   button_color = QColor(100, 100, 100);
                 else
@@ -1187,9 +1187,9 @@ namespace Breeze
             {
                 QColor button_color;
                 if ( !inactiveWindow && qGray(titleBarColor.rgb()) < 128 )
-                  button_color = QColor(223, 192, 76);
+                  button_color = QColor(239, 219, 60);
                 else if( !inactiveWindow )
-                  button_color = QColor(255, 188, 48);
+                  button_color = QColor(234, 177, 59);
                 else if ( qGray(titleBarColor.rgb()) < 128 )
                   button_color = QColor(100, 100, 100);
                 else
@@ -1527,9 +1527,9 @@ namespace Breeze
             {
                 QColor button_color;
                 if ( qGray(titleBarColor.rgb()) < 128 )
-                  button_color = QColor(238, 102, 90);
+                  button_color = QColor(218, 70, 63);
                 else
-                  button_color = QColor(255, 94, 88);
+                  button_color = QColor(218, 75, 101);
                 QPen button_pen( qGray(titleBarColor.rgb()) < 69 ? button_color.lighter(115) : button_color.darker(115) );
                 button_pen.setJoinStyle( Qt::MiterJoin );
                 if ( d->internalSettings()->animationsEnabled() )
@@ -1573,9 +1573,9 @@ namespace Breeze
             {
                 QColor button_color;
                 if ( qGray(titleBarColor.rgb()) < 128 )
-                  button_color = QColor(100, 196, 86);
+                  button_color = QColor(202,97,216);
                 else
-                  button_color = QColor(40, 200, 64);
+                  button_color = QColor(149, 96, 242);
                 QPen button_pen( qGray(titleBarColor.rgb()) < 69 ? button_color.lighter(115) : button_color.darker(115) );
                 button_pen.setJoinStyle( Qt::MiterJoin );
                 if ( d->internalSettings()->animationsEnabled() )
@@ -1643,9 +1643,9 @@ namespace Breeze
             {
                 QColor button_color;
                 if ( qGray(titleBarColor.rgb()) < 128 )
-                  button_color = QColor(223, 192, 76);
+                  button_color = QColor(239, 219, 60);
                 else
-                  button_color = QColor(255, 188, 48);
+                  button_color = QColor(234, 177, 59);
                 QPen button_pen( qGray(titleBarColor.rgb()) < 69 ? button_color.lighter(115) : button_color.darker(115) );
                 button_pen.setJoinStyle( Qt::MiterJoin );
                 if ( d->internalSettings()->animationsEnabled() )
@@ -2024,9 +2024,9 @@ namespace Breeze
             {
                 QColor button_color;
                 if ( qGray(titleBarColor.rgb()) < 128 )
-                  button_color = QColor(238, 102, 90);
+                  button_color = QColor(218, 70, 63);
                 else
-                  button_color = QColor(255, 94, 88);
+                  button_color = QColor(218, 75, 101);
                 QPen button_pen( qGray(titleBarColor.rgb()) < 69 ? button_color.lighter(115) : button_color.darker(115) );
                 button_pen.setJoinStyle( Qt::MiterJoin );
                 if ( d->internalSettings()->animationsEnabled() )
@@ -2070,9 +2070,9 @@ namespace Breeze
             {
                 QColor button_color;
                 if ( qGray(titleBarColor.rgb()) < 128 )
-                  button_color = QColor(100, 196, 86);
+                  button_color = QColor(202,97,216);
                 else
-                  button_color = QColor(40, 200, 64);
+                  button_color = QColor(149, 96, 242);
                 QPen button_pen( qGray(titleBarColor.rgb()) < 69 ? button_color.lighter(115) : button_color.darker(115) );
                 button_pen.setJoinStyle( Qt::MiterJoin );
                 if ( d->internalSettings()->animationsEnabled() )
@@ -2131,9 +2131,9 @@ namespace Breeze
             {
                 QColor button_color;
                 if ( qGray(titleBarColor.rgb()) < 128 )
-                  button_color = QColor(223, 192, 76);
+                  button_color = QColor(239, 219, 60);
                 else
-                  button_color = QColor(255, 188, 48);
+                  button_color = QColor(234, 177, 59);
                 QPen button_pen( qGray(titleBarColor.rgb()) < 69 ? button_color.lighter(115) : button_color.darker(115) );
                 button_pen.setJoinStyle( Qt::MiterJoin );
                 if ( d->internalSettings()->animationsEnabled() )
@@ -2531,7 +2531,7 @@ namespace Breeze
 
             case DecorationButtonType::Close:
             {
-                QColor  button_color = QColor(238, 102, 90);
+                QColor  button_color = QColor(218, 70, 63);
                 button_color.setAlpha( button_color.alpha()*m_opacity );
                 painter->setPen( Qt::NoPen );
                 painter->setBrush( button_color );
@@ -2554,7 +2554,7 @@ namespace Breeze
 
             case DecorationButtonType::Maximize:
             {
-                QColor button_color = QColor(100, 196, 86);
+                QColor button_color = QColor(202,97,216);
                 button_color.setAlpha( button_color.alpha()*m_opacity );
                 painter->setPen( Qt::NoPen );
                 painter->setBrush( button_color );
@@ -2599,7 +2599,7 @@ namespace Breeze
 
             case DecorationButtonType::Minimize:
             {
-                QColor button_color = QColor(223, 192, 76);
+                QColor button_color = QColor(239, 219, 60);
                 button_color.setAlpha( button_color.alpha()*m_opacity );
                 painter->setPen( Qt::NoPen );
                 painter->setBrush( button_color );
@@ -2866,7 +2866,7 @@ namespace Breeze
 
             case DecorationButtonType::Close:
             {
-                QColor button_color = QColor(238, 102, 90);
+                QColor button_color = QColor(218, 70, 63);
                 button_color.setAlpha( button_color.alpha()*m_opacity );
                 painter->setPen( Qt::NoPen );
                 painter->setBrush( button_color );
@@ -2889,7 +2889,7 @@ namespace Breeze
 
             case DecorationButtonType::Maximize:
             {
-                QColor button_color = QColor(100, 196, 86);
+                QColor button_color = QColor(202,97,216);
                 button_color.setAlpha( button_color.alpha()*m_opacity );
                 painter->setPen( Qt::NoPen );
                 painter->setBrush( button_color );
@@ -2925,7 +2925,7 @@ namespace Breeze
 
             case DecorationButtonType::Minimize:
             {
-                QColor button_color = QColor(223, 192, 76);
+                QColor button_color = QColor(239, 219, 60);
 
                 button_color.setAlpha( button_color.alpha()*m_opacity );
                 painter->setPen( Qt::NoPen );
