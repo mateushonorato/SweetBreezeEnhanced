@@ -132,7 +132,7 @@ install(TARGETS sierrabreezeenhanced
 kcmutils_generate_desktop_file(sierrabreezeenhanced)
 
 # install(TARGETS breezedecoration DESTINATION
-# ${PLUGIN_INSTALL_DIR}/org.kde.kdecoration2) install(FILES
+# ${PLUGIN_INSTALL_DIR}/org.kde.kdecoration3) install(FILES
 # config/breezedecorationconfig.desktop DESTINATION  ${SERVICES_INSTALL_DIR})
 
 add_subdirectory(config)
