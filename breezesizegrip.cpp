@@ -20,7 +20,7 @@
 
 #include "breezesizegrip.h"
 
-#include <KDecoration3/DecoratedWindow>
+#include <KDecoration2/DecoratedClient>
 
 #include <QPainter>
 #include <QPolygon>
@@ -62,10 +62,10 @@ namespace Breeze
         updatePosition();
 
         // connections
-        auto c = decoration->window();
-        connect( c, &KDecoration3::DecoratedWindow::widthChanged, this, &SizeGrip::updatePosition );
-        connect( c, &KDecoration3::DecoratedWindow::heightChanged, this, &SizeGrip::updatePosition );
-        connect( c, &KDecoration3::DecoratedWindow::activeChanged, this, &SizeGrip::updateActiveState );
+        auto c = decoration->client();
+        connect( c, &KDecoration2::DecoratedClient::widthChanged, this, &SizeGrip::updatePosition );
+        connect( c, &KDecoration2::DecoratedClient::heightChanged, this, &SizeGrip::updatePosition );
+        connect( c, &KDecoration2::DecoratedClient::activeChanged, this, &SizeGrip::updateActiveState );
 
         // show
         show();
@@ -99,7 +99,7 @@ namespace Breeze
         #if BREEZE_HAVE_X11
 
         if( !QX11Info::isPlatformX11() ) return;
-        auto c = m_decoration.data()->window();
+        auto c = m_decoration.data()->client();
 
         xcb_window_t windowId = c->windowId();
         if( windowId )
@@ -191,7 +191,7 @@ namespace Breeze
         #if BREEZE_HAVE_X11
         if( !QX11Info::isPlatformX11() ) return;
 
-        auto c = m_decoration.data()->window();
+        auto c = m_decoration.data()->client();
         QPoint position(
             c->width() - GripSize - Offset,
             c->height() - GripSize - Offset );
@@ -213,7 +213,7 @@ namespace Breeze
         auto connection( QX11Info::connection() );
 
         // client
-        auto c = m_decoration.data()->window();
+        auto c = m_decoration.data()->client();
 
         /*
         get root position matching position
