@@ -5,11 +5,11 @@
         "Id": "org.kde.sierrabreezeenhanced",
         "Name": "Sierra Breeze Enhanced",
         "ServiceTypes": [
-            "org.kde.kdecoration3"
+            "org.kde.kdecoration2"
         ]
     },
     "X-KDE-ConfigModule": "kcm_sierrabreezeenhanceddecoration",
-    "org.kde.kdecoration3": {
+    "org.kde.kdecoration2": {
         "defaultTheme": "Sierra Breeze Enhanced",
         "recommendedBorderSize": "Tiny"
     }
