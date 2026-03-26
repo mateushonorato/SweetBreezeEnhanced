@@ -51,7 +51,7 @@ find_package(
                                              ConfigWidgets WindowSystem I18n)
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED
              COMPONENTS Widgets DBus)
-find_package(Qt6 REQUIRED COMPONENTS Core5Compat)
+find_package(Qt6 REQUIRED COMPONENTS Core5Compat GuiPrivate)
 
 # XCB
 find_package(XCB COMPONENTS XCB)
